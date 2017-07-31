@@ -28,9 +28,9 @@
 15.导出整个数据库  
 `dump -u 用户名 -p 数据库名 > 导出的文件名;`  
 16.导出一个数据库结构  
-`dump -u dbuser -p -d --add-drop-table dbname >d:/dbname_db.sql;`  
+`mysqldump -u dbuser -p -d --add-drop-table dbname >d:/dbname_db.sql;`  
 17.导出一个表  
-`dump -u username -p 数据库名 表名> 导出的文件名;`  
+`mysqldump -u username -p 数据库名 表名> 导出的文件名;`  
 18.导入数据库  
 `mysql -u username -p passwrod xxx < xxx.sql`  
 19.创建用户  
