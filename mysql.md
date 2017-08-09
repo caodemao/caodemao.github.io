@@ -1,4 +1,4 @@
-# Mysql 命令
+《# Mysql 命令
 1.登录  
 `mysql -u xxx -p -h localhost;`  
 2.显示所有数据库  
