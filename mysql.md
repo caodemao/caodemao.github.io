@@ -1,4 +1,4 @@
-《# Mysql 命令
+# Mysql 命令
 1.登录  
 `mysql -u xxx -p -h localhost;`  
 2.显示所有数据库  
@@ -38,13 +38,36 @@
 20.给用户权限  
 `grant all on clubmembernew.* TO 'clubmember'@'localhost';  `  
 21.查看用户权限  
-`show grants for 'clubmember'@'localhost';  `
+`show grants for 'clubmember'@'localhost';  `  
+22.添加表字段  
+`alter table 表名 add column 字段名 字段类型 是否允许为null default 默认值 AFTER 在哪个字段后面;`  
+eg:`alter table syw_xinhouse add column zuoxin varchar(10) not Null default '';`   
+23.修改表字段  
+`alter table 表名 change column 字段名 字段类型 是否允许为null default 默认值;`    
+24.修改默认值  
+`alter table 表名 alter column 字段名 drop default;` (若本身存在默认值，则先删除)  
+`alter table 表名 alter column 字段名 set default 默认值;`(若本身不存在则可以直接设定)  
+25.查看数据库支持的字符集及校对  
+`show character set;`  
+26.查看mysql创建表  
+`SHOW CREATE table xxx;`  
+27.删除表  
+`DROP TABLE  tbl_name;`  
+28.删除字段  
+`alter table 表名 drop column 字段名;`  
+29.删除表中所有记录  
+`DELETE FROM 表名`  
+`TRUNCATE TABLE 表名`  
+30.删除表中某些记录  
+`delete from 表名 where ...`  
+31.查看MYSQL数据库中所有用户   
+`SELECT DISTINCT CONCAT('User: ''',user,'''@''',host,''';') AS query FROM mysql.user;`  
 
 #修改root密码
 方法1： 用SET PASSWORD命令  
 首先登录MySQL。   
-`格式：mysql> set password for 用户名@localhost = password('新密码');  `  
-例子：mysql> set password for root@localhost = password('123');  
+`格式：mysql> set password for 用户名@localhost = password('新密码');`      
+例子：mysql> set password for root@localhost = password('123');    
 
 方法2：用mysqladmin  
 `格式：mysqladmin -u用户名 -p旧密码 password 新密码  `  
